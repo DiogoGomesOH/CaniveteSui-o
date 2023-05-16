@@ -1,208 +1,27 @@
-# CaniveteSuico
+## Olá! Eu sou o Matheus Fraga 🖐️
 
+[![Blog](https://img.shields.io/website?label=SujeitoProgramador.com&style=for-the-badge&url=https://sujeitoprogramador.com/)](https://sujeitoprogramador.com)
+[![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/c/sujeitoprogramador)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/sujeitoprogramador)
+[![Twitch](https://img.shields.io/badge/Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white)](https://twitch.tv/fragabr)
 
-include <iostream>
-include <stdlib.h>
+![Fraga GitHub stats](https://github-readme-stats.vercel.app/api?username=devfraga&show_icons=true&theme=dracula&count_private=true)
 
-using namespace std;
+## Tecnologias que eu uso no meu dia
 
-//funcao menu
-char menu() 
-{
-	char op;
-    cout << "\n----- Menu -----\n";
-    cout << "X- Sair do programa\n";
-    cout << "1- Converter binario para decimal.\n";
-    cout << "2- Converter decimal para binario. \n";
-    cout << "3- Converter velocidade em km/h para m/s. \n";
-	cout << "4- Tabuada. \n";
-	cout << "Insira a sua opcao: ";
-	cin >> op;
-	system("cls");
-	return op;
-}
-//funcao submenu
-double submenu()
-{
-	char tabu;
-	cout << "\n----- SubMenu Tabuada -----\n";
-	cout << "X- Sair do programa\n";
-	cout << "1- Adicao\n";
-	cout << "2- Subtracao\n";
-	cout << "3- Divisao\n";
-	cout << "4- Multiplicacao\n";
-	cout << "Insira a sua opcao: ";
-	cin >> tabu;
-	system("cls");
-	return tabu;
-}
+<div style="display: inline_block">
+  <img align="center" alt="html5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img align="center" alt="css" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img align="center" alt="js" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img align="center" alt="ts" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img align="center" alt="react" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img align="center" alt="nodejs" src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
+</div><br/>
 
-//funcao expoente
-long long int expoente(int b,int e)
-{ 
-	long long int resultado = 1;
-	if(e != 0){
-		for(int i = 1; i <= e; i++)
-		{
-			resultado = resultado * b;
-		}
-	}
-	return resultado;
-}
+Apaixonado por tecnologia, educação e por mudar a vida das pessoas através da programação.
 
-//funcao converte Binario Para Decimal
-int converteBinarioParaDecimal(long long int numbinario)
-{
-	int decimal = 0, i = 0, digito;
-	while(numbinario != 0)
-	{
-		digito = numbinario % 10;
-		numbinario = numbinario / 10;
-		decimal = decimal + digito * expoente(2,i);
-		i++;
-	}
-	return decimal;
-}
-
-//funcao converte Decimal Para binario
-int decimalParaBinario(int deci){
-    int binario = 0;
-    int i = 0;
-	int resto;
-    while (deci > 0) {
-		resto = deci % 2;
-		deci = deci / 2;
-        binario += resto * expoente(10,i);
-        i++;
-    }
-	return binario;
-}
-
-//Funcao para verificar se o numero e binario
-bool verificarBinario(long long int numbinario) {
-	int digito;
-	bool r = true;
-    while (numbinario > 0) {
-		digito = numbinario % 10;
-        if (digito != 0 || digito != 1) {
-            r = false;
-        }
-		cout << r << endl;
-        numbinario = numbinario / 10;
-    }
-    return r;
-}
-
-//funcao converte km para m/s
-double Kmh(double km){
-	return km / 3.6;
-}
-
-//funcao para somar numeros inseridos
-int soma(int num1, int num2){
-	return num1 + num2;
-}
-
-//funcao para subtrair numeros inseridos
-int retirar(int num3, int num4){
-	return num3 - num4;
-}
-
-//funcao para dividir numeros inseridos
-float divisao(float num5, float num6){
-	return num5 / num6;
-}
-
-//funcao para multiplicar numeros inseridos
-int multiplicar(int num7, int num8){
-	return num7 * num8;
-}
-
-int main(){
-	char op;
-	char tabu;
-	long long int numbinario;
-	int deci;
-	double velo;
-	int tabua;
-    do{
-		op = menu();
-        switch(op) {
-            case 'x':
-				cout << "Adeus!!\n";
-                break;
-				
-            case 'X':
-                cout << "Adeus!!\n";
-                break;
-				
-            case '1':
-                cout << "Insira um numero binario: ";
-				cin >> numbinario;
-				cout << "\nO numero binario inserido convertido para decimal e: " << converteBinarioParaDecimal(numbinario) << "\n";
-                break;
-				
-            case '2':
-                cout << "Digite numero decimal:";
-				cin >> deci;
-				cout << "\nO numero decimal inserido convertido para binario e: " << decimalParaBinario(deci) << "\n";
-				break;
-				
-            case '3':
-                cout << "Insira a velocidade em Km/h: ";
-				cin >> velo;
-				cout << "\nA velocidade inserida em km/h convertido fica: " << Kmh(velo) << " M/s \n";
-                break;
-				
-			case '4':
-				do{
-					tabu = submenu();
-					int num1, num2;
-					int num3, num4;
-					float num5, num6;
-					int num7, num8;
-					switch(tabu){
-						case 'x':
-							cout << "Adeus!!\n";
-							break;
-				
-						case 'X':
-							cout << "Adeus!!\n";
-							break;
-			
-						case '1':
-							cout << "Insira o 1 numero que quer somar : ";
-							cin >> num1;
-							cout << "Insira o 2 numero : ";
-							cin >> num2;
-							cout << "A soma dos numeros inseridos e " << soma(num1, num2);
-							break;
-						
-						case '2':
-							cout << "Insira o 1 numero que quer subtrair : ";
-							cin >> num3;
-							cout << "Insira o 2 numero : ";
-							cin >> num4;
-							cout << "A subtracao dos numeros inseridos e " << retirar(num3, num4);
-							break;
-							
-						case '3':
-							cout << "Insira o 1 real numero que quer dividir : ";
-							cin >> num5;
-							cout << "Insira o 2 numero real : ";
-							cin >> num6;
-							cout << "A divisao dos numeros inseridos e " << divisao(num5, num6);
-							break;
-							
-						case '4':
-							cout << "Insira o 1  numero que quer multiplicar : ";
-							cin >> num7;
-							cout << "Insira o 2 numero real : ";
-							cin >> num8;
-							cout << "A multiplicao dos numeros inseridos e " << multiplicar(num7, num8);
-				    }
-				} while (tabu != 'X' && tabu != 'x');
-		}		
-	} while (op != 'X' && op != 'x');
-	return 0;
-}
+### Últimos videos:
+- [Criando Infinite Scroll - React Native](https://youtu.be/TjkFGrjkXfc)<br/>
+- [O que estudar para se tornar um desenvolvedor front-end? 2022](https://youtu.be/Ab-kGzlCCWI)<br/>
+- [Criando interface login do Instagram - React Native](https://youtu.be/pSV9Wh_p2Cg)<br/>
+- [Aprendendo e conhecendo FIGMA - UI Design](https://youtu.be/KRCfX25yFf4)<br/>
